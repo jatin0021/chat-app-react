@@ -1,15 +1,18 @@
-import Home from "./Pages/Home"
-import Login from "./Pages/Login"
-import Register from "./Pages/Register"
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./Pages/Home";
+import Login from "./Pages/Login";
+import Register from "./Pages/Register";
 
 const App = () => {
   return (
-    <div>
-      <Register />
-      <Login />
-      <Home />
-      </div>
-  )
-}
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} /> 
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+      </Routes>
+    </BrowserRouter>
+  );
+};
 
-export default App
+export default App;
