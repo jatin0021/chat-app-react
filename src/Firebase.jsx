@@ -1,23 +1,20 @@
-// src/firebase.js
-import { initializeApp } from "firebase/app";
-import { getAuth, createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
-import { getFirestore, doc, setDoc } from "firebase/firestore";
-import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import {initializeApp } from "firebase/app";
+import { getAuth } from "firebase/auth";
+import { getStorage } from "firebase/storage";
+import { getFirestore } from "firebase/firestore";
 
-// 🔹 Your Firebase Config (replace with your Firebase project's settings)
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+  apiKey: "AIzaSyBPJROvkmuzXSqopokmcOSRoy4ypayuWBk",
+  authDomain: "chat-app-59769.firebaseapp.com",
   projectId: "chat-app-59769",
-  storageBucket: "YOUR_PROJECT_ID.appspot.com",
-  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-  appId: "YOUR_APP_ID"
+  storageBucket: "chat-app-59769.firebasestorage.app",
+  messagingSenderId: "301507568106",
+  appId: "1:301507568106:web:21fd4a0ad17841f9655293",
+  measurementId: "G-4GMM3Z5F4X"
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-const db = getFirestore(app);
-const storage = getStorage(app);
-
-export { auth, db, storage, createUserWithEmailAndPassword, updateProfile, setDoc, doc, ref, uploadBytes, getDownloadURL };
+export const app = initializeApp(firebaseConfig);
+export const auth = getAuth();
+export const db = getFirestore();
+export const storage = getStorage();
